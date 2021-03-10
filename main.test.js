@@ -6,7 +6,7 @@ test("query logs", async () => {
     .readFileSync(path.join(__dirname, "schema.prisma"))
     .toString();
   process.env.BLOOP = "file:dev.db";
-  const engine = require(`./libquery_engine_napi.so.node`);
+  const engine = require(`./libquery_engine_napi-debian-openssl-1.1.x.so.node`);
 
   let qe = new engine.QueryEngine(
     {
@@ -19,4 +19,3 @@ test("query logs", async () => {
     }
   );
 });
-
